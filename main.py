@@ -20,7 +20,7 @@
 #
 # HW connection from the cable to ESP32:
 # connect DB-9 pins 5,7 (GND, RTS) to ESP32 GND; DB-9 pin 4 (DTR) to ESP32 3.3V rail
-# andDB-9 pin 2 (RXD) to ESP32 GPIO 16
+# and DB-9 pin 2 (RXD) to ESP32 GPIO 16
 
 
 from machine import UART
@@ -163,11 +163,11 @@ def main():
     u2 = UART(2, baudrate=2400, tx=17, rx=16)
     u2.init(2400, bits=8, parity=None, stop=1, invert=UART.INV_RX)
 
-    buffer = [-1]*14
+    buffer = [(False, False, False, False)]*14
     while True:
         data = u2.read()
         if data:
-            #print("RAW: " + str([hex(b) for b in data]))
+            #print("DEBUG: " + str([hex(b) for b in data]))
             for b in data:
                 i,bits = decode_byte(b)
                 if i == 1 or i > 14:
