@@ -23,3 +23,45 @@ The protocol is described here https://sigrok.org/wiki/Multimeter_ICs#Fortune_Se
 * connect DB-9 pins 5,7 (GND, RTS) to ESP32 GND
 * connect DB-9 pin 4 (DTR) to ESP32 3.3V rail
 * connect DB-9 pin 2 (RXD) to ESP32 GPIO 16
+
+## Installation
+
+* install MicroPython to the ESP32
+* copy `main.py` to the MicroPython root
+* reboot the ESP32
+* connect to the console (i.e. `screen /dev/ttyUSB0 115200`)
+
+## Output examples
+
+The output is the printed tuple (value, unit, flags). This line is printed every time we receive a complete
+transmission from the multimeter.
+
+```
+(10.0, 'Ohms', 'auto rs232')
+(9.9, 'Ohms', 'auto rs232')
+(10.1, 'Ohms', 'auto rs232')
+```
+
+```
+(-79.6, 'mV', 'DC auto rs232')
+(-79.7, 'mV', 'DC auto rs232')
+(-79.7, 'mV', 'DC auto rs232')
+```
+
+```
+(0.999, 'kHz', 'rs232')
+(0.999, 'kHz', 'rs232')
+(0.999, 'kHz', 'rs232')
+```
+
+```
+(1.1, 'Ohms', 'rs232 beep')
+(0.9, 'Ohms', 'rs232 beep')
+(1.0, 'Ohms', 'rs232 beep')
+```
+
+```
+(1.14, 'nF', 'auto rs232')
+(1.15, 'nF', 'auto rs232')
+(1.16, 'nF', 'auto rs232')
+```
