@@ -16,6 +16,8 @@ The protocol is described here https://sigrok.org/wiki/Multimeter_ICs#Fortune_Se
 * works with UNI-T UT60E / Voltcraft VC840 - see https://sigrok.org/wiki/UNI-T_UT60E
 * tested only with the original cable - see https://sigrok.org/wiki/Device_cables#UNI-T_UT-D02
 
+![Multimater with the cable](multimeter_with_cable.jpg)
+
 ## HW connection from the opto-coupler cable to ESP32
 
 * connect DB-9 pins 5,7 (GND, RTS) to ESP32 GND
